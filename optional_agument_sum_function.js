@@ -1,0 +1,15 @@
+function addTogether(...args) {
+  const [a, b] = args;
+
+  // check if both arguments are numbers
+  if (typeof a !== "number") return undefined;
+
+  if (args.length === 2) {
+    return typeof b === "number" ? a + b : undefined;
+  }
+
+  // if only one argument
+  return function(c) {
+    return typeof c === "number" ? a + c : undefined;
+  };
+}
